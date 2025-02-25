@@ -116,6 +116,8 @@ schema_package_entry_point = "sintering.schema_packages:schema_package_entry_poi
 
 
 example_upload_entry_point = "sintering.example_uploads:example_upload_entry_point"
+
+sintering = "sintering.schema_packages:sintering"
 [tool.cruft]
 # Avoid updating workflow files, this leads to permissions issues
 skip = [".github/*"]

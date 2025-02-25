@@ -15,3 +15,17 @@ schema_package_entry_point = NewSchemaPackageEntryPoint(
     name='NewSchemaPackage',
     description='New schema package entry point configuration.',
 )
+
+class SinteringEntryPoint(SchemaPackageEntryPoint):
+    parameter: int = Field(0, description='Custom configuration parameter')
+
+    def load(self):
+        from sintering.schema_packages.sintering import m_package
+
+        return m_package
+
+
+sintering = SinteringEntryPoint(
+    name='Sintering',
+    description='Schema package for describing a sintering process.',
+)
